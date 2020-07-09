@@ -12,8 +12,14 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
+    script: [
+      { src: 'https://code.jquery.com/jquery-3.5.1.slim.min.jss' },
+      { src: 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' },
+      { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' }
+    ],
   },
   /*
   ** Global CSS
@@ -26,7 +32,6 @@ module.exports = {
     vendor: ['axios'],
     /*
     ** Run ESLINT on save
-    */
     extend (config, ctx) {
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
@@ -37,6 +42,13 @@ module.exports = {
         })
       }
     }
+    */
+  },
+  buildModules: [
+    '@nuxtjs/vuetify'
+  ],
+  vuetify: {
+    /* module options */
   },
   serverMiddleware: [
     // API middleware

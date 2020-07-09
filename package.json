@@ -19,6 +19,7 @@
     "source-map-support": "^0.4.18"
   },
   "devDependencies": {
+    "@nuxtjs/vuetify": "^1.11.2",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^10.2.1",

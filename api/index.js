@@ -4,6 +4,7 @@ const express = require('express')
 const app = express()
 
 // Require API routes
+const indexRouter = require('./routes/index');
 const users = require('./routes/users')
 
 // Import API Routes
