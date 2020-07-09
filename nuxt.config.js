@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+/* eslint-disable */
 module.exports = {
   /*
   ** Headers of the page
