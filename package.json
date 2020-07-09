@@ -15,6 +15,7 @@
     "axios": "^0.18.0",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
+    "express-session": "^1.17.1",
     "nuxt": "latest",
     "source-map-support": "^0.4.18"
   },
