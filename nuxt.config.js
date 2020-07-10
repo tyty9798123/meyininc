@@ -14,6 +14,7 @@ module.exports = {
     link: [
       { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href:'//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons' },
     ],
     script: [
       { src: 'https://code.jquery.com/jquery-3.5.1.slim.min.js' },
@@ -21,7 +22,10 @@ module.exports = {
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' }
     ],
   },
-  /*
+  plugins: [
+      { src: '~/plugins/material' }
+  ],
+  /*  
   ** Global CSS
   */
   css: ['~/assets/css/main.css'],
@@ -29,7 +33,7 @@ module.exports = {
   ** Add axios globally
   */
   build: {
-    vendor: ['axios'],
+    vendor: ['axios', 'vue-material'],
     /*
     ** Run ESLINT on save
     extend (config, ctx) {
@@ -44,12 +48,12 @@ module.exports = {
     }
     */
   },
-  buildModules: [
-    '@nuxtjs/vuetify'
+  modules: [
+    ['nuxt-vue-material', {
+      theme: 'default',
+      components: [/*'MdDrawer', 'MdRadio', 'MdMenu', 'MdContent', 'MdList', 'MdButton', 'MdToolbar',*/]
+    }],
   ],
-  vuetify: {
-    /* module options */
-  },
   serverMiddleware: [
     // API middleware
     '~/api/index.js'

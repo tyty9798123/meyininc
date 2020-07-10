@@ -17,7 +17,9 @@
     "express": "^4.16.4",
     "express-session": "^1.17.1",
     "nuxt": "latest",
-    "source-map-support": "^0.4.18"
+    "nuxt-vue-material": "^1.2.0",
+    "source-map-support": "^0.4.18",
+    "vue-material": "^1.0.0-beta-14"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2",

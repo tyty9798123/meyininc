@@ -1,30 +1,24 @@
 <template>
     <div>
-        <v-app>
-            <v-alert type="info">
-            I'm an info alert.
-            </v-alert>
-            <div class="mt-5">
-                <v-btn small>Normal</v-btn>
-            </div>
-            <div class="mt-5">
-                <v-btn small color="primary">Primary</v-btn>
-            </div>
-        </v-app>
+        <Navbar />
     </div>
 </template>
 
 <script>
 import axios from '~/plugins/axios'
+import Navbar from '~/components/Navbar.vue'
 
 export default {    
+  components: {
+    Navbar,
+  },
   async asyncData () {
     //let { data } = await axios.get('/api/users')
     //return { users: data }
   },
   head () {
     return {
-      title: 'Users'
+      title: 'MeYin 線上學習筆記'
     }
   }
 }
