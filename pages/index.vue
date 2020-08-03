@@ -13,16 +13,46 @@
 
       <hr>
       <div class="row">
-      <div class="col-12 col-md-6">
-        <md-toolbar>
-          <h3 class="md-title">
-            <nuxt-link to='/author_introduction'>
-            <img src="~/assets/img/info_introduce.png" width="40"> 
-              作者自我介紹
-            </nuxt-link>
-          </h3>
-        </md-toolbar>
-      </div>
+        <div class="col-12 col-md-6 mt-2">
+          <md-toolbar>
+            <h3 class="md-title">
+              <nuxt-link to='/author_introduction'>
+              <img src="~/assets/img/info_introduce.png" width="40"> 
+                作者自我介紹
+              </nuxt-link>
+            </h3>
+          </md-toolbar>
+        </div>
+        <div class="col-12 col-md-6 mt-2">
+          <md-toolbar class="md-primary">
+            <h3 class="md-title">
+              <nuxt-link to='/articles' style="color: white;">
+              <img src="~/assets/img/article.png" width="40"> 
+                文章
+              </nuxt-link>
+            </h3>
+          </md-toolbar>
+        </div>
+        <div class="col-12 col-md-6 mt-2">
+          <md-toolbar class="md-accent">
+            <h3 class="md-title">
+              <nuxt-link to='/author_introduction' style="color: black;">
+              <img src="~/assets/img/bells.png" width="40"> 
+                會員提醒事項
+              </nuxt-link>
+            </h3>
+          </md-toolbar>
+        </div>
+        <div class="col-12 col-md-6 mt-2">
+          <md-toolbar class="md-transparent">
+            <h3 class="md-title">
+              <nuxt-link to='/portfolio' style="color: black;">
+              <img src="~/assets/img/portfolio.jpeg" width="40"> 
+                作品集
+              </nuxt-link>
+            </h3>
+          </md-toolbar>
+        </div>
       </div>
     </div>
 </template>
