@@ -46,12 +46,46 @@
                     <div class="text-center">
                         <md-radio v-model="is_public" value="true" class="md-primary">公開</md-radio>
                         <md-radio v-model="is_public" value="Primary">私人</md-radio>
-                        <md-button class="md-raised w-100">最近</md-button>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <md-field md-inline>
+                    <label>查詢</label>
+                    <md-input v-model="searchText"></md-input>
+                    </md-field>
+                </div>
+                <div class="col-12 col-md-4">
+                    <md-button class="md-raised w-100">最近</md-button>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <md-table class="md-card">
+                        <md-table-row>
+                            <md-table-head>狀態</md-table-head>
+                            <md-table-head>文章</md-table-head>
+                            <md-table-head>作者</md-table-head>
+                            <md-table-head>發文日期</md-table-head>
+                        </md-table-row>
+                        <md-table-row>
+                            <md-table-cell>公開</md-table-cell>
+                            <md-table-cell><md-badge class="text-left md-square" md-content="New" /><nuxt-link to="/">[計算機網路] 31_CSMA-CA協議</nuxt-link></md-table-cell>
+                            <md-table-cell>管理員</md-table-cell>
+                            <md-table-cell>2020/10/06 12:50:33</md-table-cell>
+                        </md-table-row>
+                        <md-table-row>
+                            <md-table-cell>私人</md-table-cell>
+                            <md-table-cell><md-badge class="text-left md-square" md-content="New" />[計算機網路] 31_CSMA-CA協議</md-table-cell>
+                            <md-table-cell>管理員</md-table-cell>
+                            <md-table-cell>2020/10/06 12:50:33</md-table-cell>
+                        </md-table-row>
+                    </md-table>
+                </div>
+            </div>
         </div>
-        <hr>
     </div>
 </template>
 <script>
@@ -60,7 +94,8 @@ export default {
         return {
             selectedTags: [],
             selectedMonth: [],
-            is_public: ''
+            is_public: '',
+            searchText: ''
         }
     }
 }
