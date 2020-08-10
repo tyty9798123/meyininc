@@ -36,7 +36,7 @@
         <div class="col-12 col-md-6 mt-2">
           <md-toolbar class="md-accent">
             <h3 class="md-title">
-              <nuxt-link to='/author_introduction' style="color: black;">
+              <nuxt-link to='/reminding' style="color: black;">
               <img src="~/assets/img/bells.png" width="40"> 
                 會員提醒事項
               </nuxt-link>

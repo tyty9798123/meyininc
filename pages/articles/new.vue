@@ -39,7 +39,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12">
-                            <div class="text-center">
+                            <div class="text-center">   
                                 <md-button class="md-raised md-primary">發布</md-button>
                             </div>
                         </div>

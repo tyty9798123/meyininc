@@ -25,8 +25,8 @@ module.exports = {
   },
   plugins: [
       { src: '~/plugins/material' },
-      { src: '~/plugins/ckeditor.js', ssr: false }
-
+      { src: '~/plugins/ckeditor.js', ssr: false },
+      { src: '~/plugins/eventBus.js'}
   ],
   /*  
   ** Global CSS

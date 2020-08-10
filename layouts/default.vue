@@ -4,7 +4,9 @@
       <md-button class="md-icon-button" @click="showNavigation = true">
         <md-icon>menu</md-icon>
       </md-button>
-      <span class="md-title">My Title</span>
+      <span class="md-title">
+        <nuxt-link to='/' style="color: white">波克夏公司</nuxt-link>
+      </span>
 
       <div class="md-toolbar-section-end">
         <md-button @click="showSidepanel = true">Favorites</md-button>
