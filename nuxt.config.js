@@ -20,11 +20,13 @@ module.exports = {
       { src: 'https://code.jquery.com/jquery-3.5.1.slim.min.js' },
       { src: 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' },
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' },
-      { src: 'https://cdn.ckeditor.com/4.6.0/standard/ckeditor.js'}
+      //{ src: 'https://cdn.ckeditor.com/4.6.0/standard/ckeditor.js'}
     ],
   },
   plugins: [
-      { src: '~/plugins/material' }
+      { src: '~/plugins/material' },
+      { src: '~/plugins/ckeditor.js', ssr: false }
+
   ],
   /*  
   ** Global CSS
