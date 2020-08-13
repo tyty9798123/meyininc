@@ -14,7 +14,7 @@
       <hr>
       <div class="row">
         <div class="col-12 col-md-6 mt-2">
-          <md-toolbar>
+          <md-toolbar class="md-transparent">
             <h3 class="md-title">
               <nuxt-link to='/author_introduction'>
               <img src="~/assets/img/info_introduce.png" width="40"> 
@@ -24,9 +24,9 @@
           </md-toolbar>
         </div>
         <div class="col-12 col-md-6 mt-2">
-          <md-toolbar class="md-primary">
+          <md-toolbar class="md-transparent">
             <h3 class="md-title">
-              <nuxt-link to='/article' style="color: white;">
+              <nuxt-link to='/article'>
               <img src="~/assets/img/article.png" width="40"> 
                 文章
               </nuxt-link>
@@ -34,9 +34,9 @@
           </md-toolbar>
         </div>
         <div class="col-12 col-md-6 mt-2">
-          <md-toolbar class="md-accent">
+          <md-toolbar class="md-transparent">
             <h3 class="md-title">
-              <nuxt-link to='/reminding' style="color: black;">
+              <nuxt-link to='/reminding'>
               <img src="~/assets/img/bells.png" width="40"> 
                 會員提醒事項
               </nuxt-link>
@@ -46,9 +46,19 @@
         <div class="col-12 col-md-6 mt-2">
           <md-toolbar class="md-transparent">
             <h3 class="md-title">
-              <nuxt-link to='/portfolio' style="color: black;">
+              <nuxt-link to='/portfolio'>
               <img src="~/assets/img/portfolio.jpeg" width="40"> 
                 作品集
+              </nuxt-link>
+            </h3>
+          </md-toolbar>
+        </div>
+        <div class="col-12 col-md-6 mt-2">
+          <md-toolbar class="md-transparent">
+            <h3 class="md-title">
+              <nuxt-link to='/users/log_in'>
+              <img src="~/assets/img/login.png" width="40"> 
+                管理員登入
               </nuxt-link>
             </h3>
           </md-toolbar>

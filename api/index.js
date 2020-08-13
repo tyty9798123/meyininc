@@ -15,10 +15,6 @@ app.use(session({
   saveUninitialized:true
 }))
 
-app.use(function(req, res, next) {
-  console.log(req.originalUrl);
-  next()
-})
 // Require API routes
 const indexRouter = require('./routes/index');
 const users = require('./routes/users')
