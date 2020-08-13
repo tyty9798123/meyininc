@@ -63,4 +63,16 @@ router.post('/login', function(req, res, next) {
   }
 })
 
+router.post('/is_login', function(req, res, next) {
+  if (req.session.uid) {
+    return res.json({
+      is_login: true,
+      uid: req.session.uid
+    })
+  }
+  return res.json({
+    is_login: false,
+  })
+})
+
 module.exports = router

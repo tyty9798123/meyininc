@@ -26,7 +26,8 @@ module.exports = {
   plugins: [
       { src: '~/plugins/material' },
       { src: '~/plugins/ckeditor.js', ssr: false },
-      { src: '~/plugins/eventBus.js'}
+      { src: '~/plugins/eventBus.js'},
+      { src: '~/plugins/route.js'}
   ],
   /*  
   ** Global CSS
@@ -52,11 +53,15 @@ module.exports = {
     */
   },
   modules: [
+    '@nuxtjs/axios',
     ['nuxt-vue-material', {
       theme: 'default',
       components: [/*'MdDrawer', 'MdRadio', 'MdMenu', 'MdContent', 'MdList', 'MdButton', 'MdToolbar',*/]
     }],
   ],
+  axios: {
+    credentials: true
+  },
   serverMiddleware: [
     // API middleware
     '~/api/index.js'
