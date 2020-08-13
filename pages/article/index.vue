@@ -10,7 +10,7 @@
             時間排序（未新增）
         -->
         <div class="container">
-            <md-button class="md-raised md-primary" @click="$router.push('/articles/new')">新增文章</md-button>
+            <md-button class="md-raised md-primary" @click="$router.push('/article/new')">新增文章</md-button>
             <md-button class="md-raised float-right" style="background: #ffc107; color: #5B5B5B;">管理文章</md-button>
             <hr>
             <div class="row">

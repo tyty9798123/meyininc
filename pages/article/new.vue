@@ -62,7 +62,7 @@ export default {
             is_private: '',
             selections: [], //tags
             editor: ClassicEditor,
-            //更多設定：https://ithelp.ithome.com.tw/articles/10211769
+            //更多設定：https://ithelp.ithome.com.tw/article/10211769
             editorConfig: {
                 // 客製化設定
 

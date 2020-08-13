@@ -6,6 +6,7 @@ const app = express()
 // Add some modules
 var session = require('express-session');
 
+//require('./connections/mysql')
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(session({

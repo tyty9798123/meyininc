@@ -26,7 +26,7 @@
         <div class="col-12 col-md-6 mt-2">
           <md-toolbar class="md-primary">
             <h3 class="md-title">
-              <nuxt-link to='/articles' style="color: white;">
+              <nuxt-link to='/article' style="color: white;">
               <img src="~/assets/img/article.png" width="40"> 
                 文章
               </nuxt-link>
