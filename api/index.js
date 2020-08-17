@@ -17,10 +17,12 @@ app.use(session({
 
 // Require API routes
 const indexRouter = require('./routes/index');
-const users = require('./routes/users')
+const users = require('./routes/users');
+const articleRouter = require('./routes/article');
 
 // Import API Routes
 app.use("/users", users)
+app.use("/article", articleRouter);
 
 // Export the server middleware
 module.exports = {

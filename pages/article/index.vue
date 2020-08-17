@@ -44,20 +44,23 @@
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="text-center">
-                        <md-radio v-model="is_public" value="true" class="md-primary">公開</md-radio>
-                        <md-radio v-model="is_public" value="Primary">私人</md-radio>
+                        <md-radio v-model="is_public" value="public" class="md-primary">公開</md-radio>
+                        <md-radio v-model="is_public" value="private">私人</md-radio>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-8">
-                    <md-field md-inline>
-                    <label>查詢</label>
+                <div class="col-12 col-md-4">
+                    <md-field>
+                    <label>查詢文字</label>
                     <md-input v-model="searchText"></md-input>
                     </md-field>
                 </div>
                 <div class="col-12 col-md-4">
-                    <md-button class="md-raised w-100">最近</md-button>
+                    <md-button class="md-raised md-primary w-100" @click="searchBtn()">立即查詢</md-button>
+                </div>
+                <div class="col-12 col-md-4">
+                    <md-button class="md-raised w-100" v-text="reverseText" @click="reverseList()"></md-button>
                 </div>
             </div>
             <hr>
@@ -70,34 +73,90 @@
                             <md-table-head>作者</md-table-head>
                             <md-table-head>發文日期</md-table-head>
                         </md-table-row>
-                        <md-table-row>
-                            <md-table-cell>公開</md-table-cell>
-                            <md-table-cell><md-badge class="text-left md-square" md-content="New" /><nuxt-link to="/">[計算機網路] 31_CSMA-CA協議</nuxt-link></md-table-cell>
-                            <md-table-cell>管理員</md-table-cell>
-                            <md-table-cell>2020/10/06 12:50:33</md-table-cell>
-                        </md-table-row>
-                        <md-table-row>
-                            <md-table-cell>私人</md-table-cell>
-                            <md-table-cell><md-badge class="text-left md-square" md-content="New" />[計算機網路] 31_CSMA-CA協議</md-table-cell>
-                            <md-table-cell>管理員</md-table-cell>
-                            <md-table-cell>2020/10/06 12:50:33</md-table-cell>
+                        <md-table-row v-for="(item, index) in article_list" :key="item.id">
+                            <md-table-cell>{{ item.status }}</md-table-cell>
+                            <md-table-cell>
+                                <md-badge v-if="item.is_recent" class="text-left md-square" md-content="New" />
+                                <nuxt-link :to="`/article/${item.articleID}`">
+                                    {{ item.articleTitle }}
+                                </nuxt-link>
+                            </md-table-cell>
+                            <md-table-cell>{{ item.userName }}({{ item.userAccount }})</md-table-cell>
+                            <md-table-cell>{{ item.created_at | formatDate }}</md-table-cell>
                         </md-table-row>
                     </md-table>
+                    <md-progress-bar v-if="is_loading_list" md-mode="indeterminate"></md-progress-bar>
                 </div>
             </div>
         </div>
+        <md-dialog-alert
+        :md-active.sync="show_dialog"
+        :md-content="dialog_content"
+        md-confirm-text="確認" />
     </div>
 </template>
 <script>
 export default {
+    asyncData({app}) {
+            
+    },
     data(){
         return {
             selectedTags: [],
             selectedMonth: [],
-            is_public: '',
-            searchText: ''
+            is_public: "public",
+            searchText: '',
+            article_list: [],
+            show_dialog: false,
+            dialog_content: '',
+            reverseText: '切換為: 時間最久排列',
+            is_loading_list: true,
+            cached_article_list: []
         }
-    }
+    },
+    async created() {
+        var vm = this;
+        let { data } = await vm.$axios.get('/api/article/get_article_list');
+        if (data.success) {
+            let results = data.result.map( (item, index, array) => {
+                const timestamp = new Date(item.created_at).valueOf() / 1000;
+                const RECENT_WEEK_SECONDS = 604800;
+                let is_recent = false;
+                if ( ((new Date() / 1000) - RECENT_WEEK_SECONDS) < timestamp ){
+                    is_recent = true;
+                }
+
+                return {
+                    ...item,
+                    status: "公開",
+                    is_recent
+                }
+            })
+            vm.article_list = results;
+            vm.cached_article_list = results;
+            vm.is_loading_list = false;
+        }
+        else {
+
+        }
+
+    },
+    methods: {
+        reverseList() {
+            let vm = this;
+            if (vm.reverseText == '切換為: 時間最近排列'){
+                vm.reverseText = '切換為: 時間最久排列';
+            }
+            else{
+                vm.reverseText = '切換為: 時間最近排列';
+            }
+            vm.article_list = vm.article_list.reverse();
+        },
+        searchBtn(){
+            let vm = this;
+            let searchText = vm.searchText;
+        }
+    },
 }
 </script>
 <style scoped>
