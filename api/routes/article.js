@@ -13,7 +13,7 @@ router.get('/get_article_list', (req, res, next) => {
     else{
         // get public
         const statment = `
-        SELECT a.articleID, a.articleTitle, a.dateTime as created_at, a.updated_at, a.userID, c.userName, c.userAccount
+        SELECT a.articleID, a.articleTitle, a.articleContent, a.dateTime as created_at, a.updated_at, a.userID, c.userName, c.userAccount
         FROM articles a 
         INNER JOIN users c ON a.userID = c.userID
         LEFT JOIN privateArticle b ON a.articleID = b.articleID where b.articleID is null

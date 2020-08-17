@@ -26,7 +26,7 @@
         <div class="col-12 col-md-6 mt-2">
           <md-toolbar class="md-transparent">
             <h3 class="md-title">
-              <nuxt-link to='/article'>
+              <nuxt-link to='/article' prefetch>
               <img src="~/assets/img/article.png" width="40"> 
                 文章
               </nuxt-link>

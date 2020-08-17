@@ -1,6 +1,11 @@
 // eslint-disable-next-line
 /* eslint-disable */
 module.exports = {
+  vue: {
+    config: {
+      sync: true,
+    }
+  },
   /*
   ** Headers of the page
   */
@@ -24,7 +29,7 @@ module.exports = {
     ],
   },
   plugins: [
-      { src: '~/plugins/material' },
+      { src: '~/plugins/material', ssr: false },
       { src: '~/plugins/ckeditor.js', ssr: false },
       { src: '~/plugins/eventBus.js'},
       { src: '~/plugins/route.js'},
@@ -57,7 +62,7 @@ module.exports = {
     '@nuxtjs/axios',
     ['nuxt-vue-material', {
       theme: 'default',
-      components: [/*'MdDrawer', 'MdRadio', 'MdMenu', 'MdContent', 'MdList', 'MdButton', 'MdToolbar',*/]
+      components: [/*'MdDrawer', 'MdRadio', 'MdMenu', 'MdContent', 'MdList', 'MdButton', 'MdToolbar',*/],
     }],
   ],
   axios: {

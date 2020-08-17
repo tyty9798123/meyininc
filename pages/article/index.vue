@@ -155,6 +155,16 @@ export default {
         searchBtn(){
             let vm = this;
             let searchText = vm.searchText;
+            if (searchText.trim() == ''){
+                vm.article_list = vm.cached_article_list;
+                return;
+            }
+            vm.article_list = [];
+            for (let i = 0; i < vm.cached_article_list.length; i++){
+                if ( vm.cached_article_list[i].articleTitle.includes(searchText) || vm.cached_article_list[i].articleContent.includes(searchText) ){
+                    vm.article_list.push(vm.cached_article_list[i]);
+                }
+            }
         }
     },
 }
